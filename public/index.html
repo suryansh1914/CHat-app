@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen active">
+            <h1>🔐 Offline Chat</h1>
+            <p>Secure local messaging</p>
+            <input type="text" id="username-input" placeholder="Enter your username" maxlength="20">
+            <button id="login-btn">Start Chatting</button>
+        </div>
+
+        <!-- Chat Screen -->
+        <div id="chat-screen" class="screen">
+            <header class="chat-header">
+                <div class="user-info">
+                    <span id="current-user"></span>
+                    <span class="status-indicator online">● Online</span>
+                </div>
+                <button id="logout-btn">Logout</button>
+            </header>
+
+            <div class="chat-main">
+                <!-- Contacts Sidebar -->
+                <aside class="contacts-panel">
+                    <h3>Contacts</h3>
+                    <div id="contacts-list"></div>
+                    <button id="add-contact-btn">+ Add Contact</button>
+                </aside>
+
+                <!-- Chat Area -->
+                <main class="chat-area">
+                    <div id="chat-header" class="chat-area-header">
+                        <h3 id="active-chat-name">Select a contact</h3>
+                    </div>
+                    <div id="messages-container" class="messages-container"></div>
+                    <div class="message-input-area">
+                        <input type="text" id="message-input" placeholder="Type a message..." disabled>
+                        <button id="send-btn" disabled>Send</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Contact Modal -->
+    <div id="add-contact-modal" class="modal">
+        <div class="modal-content">
+            <h3>Add New Contact</h3>
+            <p>Exchange this code with your friend:</p>
+            <div id="my-qr-code" class="qr-display"></div>
+            <input type="text" id="contact-code-input" placeholder="Enter friend's code">
+            <div class="modal-buttons">
+                <button id="generate-code-btn">Generate My Code</button>
+                <button id="add-contact-submit">Add Contact</button>
+                <button id="close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
